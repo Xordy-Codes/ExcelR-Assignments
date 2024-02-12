@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drag and Drop Swap</title>
+
+</head>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.numbers-container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+}
+
+.number {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 2em;
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.number:hover {
+  background-color: #0056b3;
+}
+
+</style>
+<body>
+<div class="container">
+  <h1>Drag and Drop Swap</h1>
+  <div class="numbers-container">
+    <div id="1" class="number" draggable="true">1</div>
+    <div id="2" class="number" draggable="true">2</div>
+    <div id="3" class="number" draggable="true">3</div>
+    <div id="4" class="number" draggable="true">4</div>
+    <div id="5" class="number" draggable="true">5</div>
+    <div id="6" class="number" draggable="true">6</div>
+    <div id="7" class="number" draggable="true">7</div>
+    <div id="8" class="number" draggable="true">8</div>
+    <div id="9" class="number" draggable="true">9</div>
+  </div>
+</div>
+
+<script>
+    const numbers = document.querySelectorAll('.number');
+
+let draggedNumber = null;
+
+numbers.forEach(number => {
+  number.addEventListener('dragstart', dragStart);
+  number.addEventListener('dragover', dragOver);
+  number.addEventListener('dragenter', dragEnter);
+  number.addEventListener('dragleave', dragLeave);
+  number.addEventListener('drop', dragDrop);
+});
+
+function dragStart() {
+  draggedNumber = this;
+  setTimeout(() => this.style.display = 'none', 0);
+}
+
+function dragOver(e) {
+  e.preventDefault();
+}
+
+function dragEnter(e) {
+  e.preventDefault();
+  this.style.backgroundColor = '#ffbb33';
+}
+
+function dragLeave() {
+  this.style.backgroundColor = '#007bff';
+}
+
+function dragDrop() {
+  this.style.backgroundColor = '#007bff';
+  if (draggedNumber !== this) {
+    const temp = this.innerText;
+    this.innerText = draggedNumber.innerText;
+    draggedNumber.innerText = temp;
+  }
+  draggedNumber.style.display = 'block';
+}
+
+</script>
+</body>
+</html>

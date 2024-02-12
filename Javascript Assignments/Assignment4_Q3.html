@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function Declaration
+function greetAlice() {
+    console.log("Hello, Alice (Function Declaration)");
+}
+greetAlice();
+
+// Function Expression
+var greetBob = function() {
+    console.log("Hello, Bob (Function Expression)");
+};
+greetBob();
+
+// Arrow Function
+var greetCharlie = () => {
+    console.log("Hello, Charlie (Arrow Function)");
+};
+greetCharlie();
+
+// Function Constructor
+var greetDave = new Function('console.log("Hello, Dave (Function Constructor)");');
+greetDave();
+
+// IIFE (Immediately Invoked Function Expression)
+(function() {
+    console.log("Hello, Eve (IIFE)");
+})();
+
+// Generator Function
+function* greetWorld() {
+    yield "Hello";
+    yield ", World (Generator Function)";
+}
+var generator = greetWorld();
+console.log(generator.next().value + generator.next().value);
+
+// Returned Function
+function createGreetFunction(name) {
+    return function() {
+        console.log("Hello, " + name + " (Returned Function)");
+    };
+}
+var greetFrank = createGreetFunction("Frank");
+greetFrank();
+
+// Object Method
+var person = {
+    name: "Grace",
+    greet: function() {
+        console.log("Hello, " + this.name + " (Object Method)");
+    }
+};
+person.greet();
+
+    </script>
+</body>
+</html>
