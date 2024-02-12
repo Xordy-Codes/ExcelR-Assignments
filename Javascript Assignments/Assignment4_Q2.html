@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // Array methods
+var arr = ["1", "2", "3", "4", "5", "6"];
+
+// Joining array elements into a string
+var arrjoin = arr.join(", ");
+console.log("Joined array:", arrjoin);
+
+// Adding elements to the end of the array
+var add = arr.push("7");
+console.log("After push:", arr);
+
+// Removing the last element from the array
+var last = arr.pop();
+console.log("Popped element:", last);
+console.log("After pop:", arr);
+
+// Adding elements to the beginning of the array
+arr.unshift("0");
+console.log("After unshift:", arr);
+
+// Removing the first element from the array
+var arrshift = arr.shift();
+console.log("Shifted element:", arrshift);
+console.log("After shift:", arr);
+
+// Reversing the array
+var reversedarr = arr.reverse();
+console.log("Reversed array:", reversedarr);
+
+// Sorting the array alphabetically
+var sortedarr = arr.sort();
+console.log("Sorted array:", sortedarr);
+
+// String methods
+var str = "JAVASCRIPT IS AWESOME!";
+
+// Finding the length of the string
+var strLength = str.length;
+console.log("String length:", strLength);
+
+// Converting the string to uppercase
+var upperStr = str.toUpperCase();
+console.log("Uppercase string:", upperStr);
+
+// Converting the string to lowercase
+var lowerStr = str.toLowerCase();
+console.log("Lowercase string:", lowerStr);
+
+// Finding the index of a substring within the string
+var index = str.indexOf("IS");
+console.log("Index of 'is':", index);
+
+// Extracting a substring
+var substring = str.substring(4, 10);
+console.log("Substring:", substring);
+
+// Splitting the string into an array of substrings
+var splitStr = str.split(" ");
+console.log("Split string:", splitStr);
+   </script>
+</body>
+</html>
